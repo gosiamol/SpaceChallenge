@@ -27,7 +27,6 @@ public class GuessTheMovie  {
         String rightLetters ="";
         String wrongLetters ="";
         int countLost=0;
-        boolean gameWon = false;
 
 
         //jest 10 prób niezgadniecia litery
@@ -39,9 +38,11 @@ public class GuessTheMovie  {
             else  {
                 System.out.println("Zgadujesz: "+randomMovies.replaceAll("[a-zA-Z&&[^" + rightLetters + "]]" , "_"));
             }
+            //pobieramy literę
             System.out.println("Zgadnij literę: ");
             Scanner scaner = new Scanner(System.in);
             String letter = scaner.next().toLowerCase();
+            //czy wybrana litera jest prawidłowa
             if (randomMovies.toLowerCase().contains(letter)){
                 rightLetters =rightLetters.concat(letter).concat(letter.toUpperCase());
             }
@@ -49,7 +50,8 @@ public class GuessTheMovie  {
                 countLost++;
                 wrongLetters = wrongLetters.concat(" ").concat(letter);
             }
-            System.out.println("Zgadłeś ("+countLost+") litery. Twoje złe litery:"+wrongLetters);
+            //wyswietamy nieprawidłowe litery które zostały wybrane
+            System.out.println("Zgadłeś nieprawidłowe ("+countLost+") litery. Twoje złe litery:"+wrongLetters);
 
             // sprawdzamy czy wygrana
             if (rightLetters.length()>0) {
