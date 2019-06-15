@@ -23,15 +23,15 @@ public class Simulation {
 
     public ArrayList<Item> loadItems (int phase) throws FileNotFoundException {
         if(phase ==1 ){
-            loadItems(phase1);
+            loadItemsFromFile(phase1);
         }else{
-            loadItems(phase2);
+            loadItemsFromFile(phase2);
         }
 
         return items;
     }
 
-    private void loadItems(File file) throws FileNotFoundException {
+    private void loadItemsFromFile(File file) throws FileNotFoundException {
         items = new ArrayList<>();
         // wczytujemy z pliku linia po lini dane
         Scanner scanner = new Scanner(file);
@@ -50,6 +50,8 @@ It first tries to fill up 1 rocket with as many items as possible before creatin
  The method then returns the ArrayList of those U1 rockets that are fully loaded.*/
     public ArrayList<Rocket> loadU1 (ArrayList<Item> itemsU1){
         rocketU1 = new ArrayList<>();
-        return rocketU1;
+        //Rocket rocket = new U1();
+
+    return rocketU1;
     }
 }
