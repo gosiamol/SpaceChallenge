@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 /*PART 2: The simulation
 Create a Simulation class that is responsible for reading item data and filling up the rockets.
 The Simulation class should include these methods:
@@ -13,4 +15,9 @@ loadU2: this method also takes the ArrayList of Items and starts creating U2 roc
 runSimulation: this method takes an ArrayList of Rockets and calls launch and land methods for each of the rockets in the ArrayList. Every time a rocket explodes or crashes (i.e if launch or land return false) it will have to send that rocket again. All while keeping track of the total budget required to send each rocket safely to Mars. runSimulation then returns the total budget required to send all rockets (including the crashed ones).
 */
 public class Simulation {
+    private ArrayList<Item> items;
+    public ArrayList<Item> loadItems (int phase) {
+
+        return items;
+    }
 }
