@@ -34,12 +34,12 @@ public class Main {
         //uruchamia symulację przy uzyciu floty takiet U1 i wyświetla wymagany całkowicie budżet
         u1Cost = simulation.runSimulation(simulation.loadU1(phase1Item));
         u1Cost +=simulation.runSimulation(simulation.loadU1(phase2Item));
-        System.out.println("Całkowity koszt dla rakiet typu U1: " +u1Cost);
+        System.out.println("Całkowity koszt dla rakiet typu U1: " +u1Cost+" milionów dolarów");
 
         //uruchamia symulację przy uzyciu floty takiet U2 i wyświetla wymagany całkowicie budżet
         u2Cost = simulation.runSimulation(simulation.loadU2(phase1Item));
         u2Cost +=simulation.runSimulation(simulation.loadU2(phase2Item));
-        System.out.println("Całkowity koszt dla rakiet typu U2: " +u2Cost);
+        System.out.println("Całkowity koszt dla rakiet typu U2: " +u2Cost+" milionów dolarów");
 
     }
 }
