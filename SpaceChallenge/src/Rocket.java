@@ -9,11 +9,12 @@ based on the actual probability of each type.
 carry and canCarry should be implemented here and will not need to be overridden in the U1 and U2 classes
  */
 public class Rocket implements SpaceShip{
-    private int currentWeight;
-    private int weight;
-    private int maxCargo;
-    private double totalWeight = currentWeight + weight;
-    private int cost;
+    int currentWeight;
+    int weight;
+    int maxCargo;
+    int cost;
+    double chanceOfLaunchExplosion;
+    double chanceOfLandingCrash;
 
     @Override
     public  boolean launch(){
@@ -25,28 +26,15 @@ public class Rocket implements SpaceShip{
     }
     @Override
     public boolean canCarry(Item item){
-        if (maxCargo >= (currentWeight + item.getWeight())){
-            return true;
-        } else{
-            //nie miesci sie
-            return false;
-        }
+        return (this.currentWeight + item.weight) <= maxCargo;
     }
     @Override
-    public void carry(Item item){
-        currentWeight += item.getWeight();
+    public int carry(Item item){
+
+        this.currentWeight += item.weight;
+        return currentWeight;
     }
-    public  double getMaxCargo(){
-        return maxCargo;
-    }
-    public double getTotalWeight(){
-        totalWeight = getCurrentWeight() + getWeight();
-        return totalWeight;
-    }
-    public int getCurrentWeight(){
-        return  currentWeight;
-    }
-    public double getWeight(){
-        return weight;
-    }
+
+
+
 }

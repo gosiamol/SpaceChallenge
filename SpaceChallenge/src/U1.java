@@ -10,33 +10,29 @@ Chance of launch explosion = 5% * (cargo carried / cargo limit)
 Chance of landing crash = 1% * (cargo carried / cargo limit)
  */
 public class U1 extends Rocket{
-    private int cost = 100000000;
-    private int weight = 100000;
-    private int maxCargo = 18000;
-    private double chanceOfLaunchExplosion;
-    private double chanceOfLandingCrash;
-
+    public U1 () {
+        cost = 100; //mln
+        weight = 10000;
+        maxCargo = 18000;
+       }
     @Override
     public  boolean launch(){
-        double random = Math.random();
-        chanceOfLandingCrash = 0.05 * getTotalWeight()/getMaxCargo();
-        if (chanceOfLaunchExplosion >= random){
-            return false;
-        } else{
-            return true;
-        }
+        int random = (int)(Math.random()*100 +1);
+
+        chanceOfLandingCrash = 5.0 * (this.currentWeight)/(this.maxCargo);
+
+        return chanceOfLaunchExplosion <= random;
 
     }
     @Override
     public  boolean land(){
-        double random = Math.random();
-        chanceOfLandingCrash = 0.01 * getTotalWeight()/getMaxCargo();
-        if (chanceOfLandingCrash >= random){
-            return false;
-        } else{
-            return true;
-        }
+        int random = (int)(Math.random()*100 +1);
+
+        chanceOfLandingCrash = 1.0 * (this.currentWeight)/(this.maxCargo);
+
+        return chanceOfLandingCrash <= random;
 
     }
+
 
 }
